@@ -34,6 +34,7 @@ def generate_caption(trend_topic, keywords):
         except Exception as e:
             print(f"Error calling Hugging Face API: {e}")
 
+    import random
     # Advanced Fallback template with psychological triggers
     hooks = [
         f"POV: You just discovered {trend_topic}. ✨",
@@ -41,9 +42,6 @@ def generate_caption(trend_topic, keywords):
         f"The future is here: {trend_topic}. 🌎",
         f"POV: {keywords[0].capitalize()} is the vibe we all needed. 🧘"
     ]
-    hook = random.choice(hooks) if 'random' in globals() else hooks[0]
-
-    import random # ensure random is available
     hook = random.choice(hooks)
 
     return f"{hook}\n\nObsessed with the {keywords[1]} energy lately. {keywords[2].capitalize()} goals! 🔥\n\nTag someone who needs to see this! 👇\n\n#{' #'.join(keywords)} #viral #2025 #trending"
